@@ -6,6 +6,9 @@ import logoImg from "../assets/images/logo.svg";
 import { Button } from "../components/Button";
 import { RoomCode } from "../components/RoomCode";
 import { useAuth } from "../Hooks/useAuth";
+import { useTheme } from "../Hooks/useTheme";
+
+import Switch from "react-switch";
 
 import toast, { Toaster } from "react-hot-toast";
 
@@ -47,6 +50,8 @@ export function Room() {
   const [newQuestion, setNewQuestion] = useState("");
   const [questions, setQuestions] = useState<Question[]>([]);
   const [title, setTitle] = useState("");
+
+  const { theme, toggleTheme } = useTheme();
 
   const roomId = params.id;
 
@@ -120,11 +125,21 @@ export function Room() {
   }
 
   return (
-    <div id="page-room">
+    <div id="page-room" className={theme}>
       <header>
         <div className="content">
           <img src={logoImg} alt="Letmeask" />
-          <RoomCode code={roomId} />
+          <div className="content-right">
+            <Switch
+              onChange={toggleTheme}
+              checked={theme == "dark"}
+              checkedIcon={false}
+              uncheckedIcon={false}
+              handleDiameter={20}
+              onColor="#835afd"
+            />
+            <RoomCode code={roomId} />
+          </div>
         </div>
       </header>
       <main>
@@ -175,6 +190,30 @@ export function Room() {
           }}
         />
       </main>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
+      <h1>10923</h1>
     </div>
   );
 }

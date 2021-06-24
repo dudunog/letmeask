@@ -6,6 +6,9 @@ import logoImg from "../assets/images/logo.svg";
 
 import { Button } from "../components/Button";
 import { useAuth } from "../Hooks/useAuth";
+import { useTheme } from "../Hooks/useTheme";
+
+import Switch from "react-switch";
 
 import { database } from "../services/firebase";
 
@@ -15,6 +18,7 @@ export function NewRoom() {
   const { user } = useAuth();
   const history = useHistory();
   const [newRoom, setNewRoom] = useState("");
+  const { theme, toggleTheme } = useTheme();
 
   async function handleCreateRoom(event: FormEvent) {
     event.preventDefault();
@@ -34,7 +38,7 @@ export function NewRoom() {
   }
 
   return (
-    <div id="page-auth">
+    <div id="page-auth" className={theme}>
       <aside>
         <img
           src={ilustrationImg}
@@ -44,6 +48,16 @@ export function NewRoom() {
         <p>Tire as dúvidas da sua audiência em tempo real</p>
       </aside>
       <main>
+        <header>
+          <Switch
+            onChange={toggleTheme}
+            checked={theme == "dark"}
+            checkedIcon={false}
+            uncheckedIcon={false}
+            handleDiameter={20}
+            onColor="#835afd"
+          />
+        </header>
         <div className="main-content">
           <img src={logoImg} alt="Letmeask" />
           <h2>Criar uma nova sala</h2>
