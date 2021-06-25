@@ -44,6 +44,11 @@ export function Home() {
       return;
     }
 
+    if (roomRef.val().endedAt) {
+      alert("Room already closed.");
+      return;
+    }
+
     history.push(`/rooms/${roomCode}`);
   }
 
@@ -61,7 +66,7 @@ export function Home() {
         <header>
           <Switch
             onChange={toggleTheme}
-            checked={theme == "dark"}
+            checked={theme === "dark"}
             checkedIcon={false}
             uncheckedIcon={false}
             handleDiameter={20}

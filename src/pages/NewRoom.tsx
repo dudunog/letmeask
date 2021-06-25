@@ -51,7 +51,7 @@ export function NewRoom() {
         <header>
           <Switch
             onChange={toggleTheme}
-            checked={theme == "dark"}
+            checked={theme === "dark"}
             checkedIcon={false}
             uncheckedIcon={false}
             handleDiameter={20}

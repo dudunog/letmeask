@@ -9,17 +9,31 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 30px;
+
+      .content-left {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+
+        > img {
+          max-height: 45px;
+        }
+      }
 
       .content-right {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        gap: 40px;
-      }
+        gap: 16px;
 
-      > img {
-        max-height: 45px;
+        button {
+          white-space: nowrap;
+          height: 40px;
+        }
       }
     }
   }
@@ -103,6 +117,11 @@
         }
       }
     }
+
+    .question-list {
+      margin-top: 32px;
+      padding-bottom: 120px;
+    }
   }
 }
 
@@ -118,6 +137,20 @@
   #page-room {
     main {
       max-width: 600px;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  #page-room {
+    header {
+      .content {
+        flex-direction: column;
+
+        .content-left {
+          justify-content: space-around;
+        }
+      }
     }
   }
 }
@@ -138,12 +171,13 @@
   }
 }
 
-@media (max-width: 568px) {
+@media (max-width: 505px) {
   #page-room {
     header {
       .content {
-        flex-direction: column;
-        gap: 1.4em;
+        .content-right {
+          flex-direction: column;
+        }
       }
     }
   }
@@ -179,6 +213,17 @@
 /* ========== Dark Theme ========== */
 
 #page-room.dark {
+  header {
+    .content {
+      .content-right {
+        button {
+          color: #fff;
+          background: #121214;
+        }
+      }
+    }
+  }
+
   main {
     color: #fff;
     .room-title {

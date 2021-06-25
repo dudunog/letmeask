@@ -31,7 +31,7 @@ export function ThemeContextProvider(props: ThemeContextProviderProps) {
   };
 
   return (
-    <div className={currentTheme}>
+    <div className={`theme ${currentTheme}`}>
       <ThemeContext.Provider value={{ theme: currentTheme, toggleTheme }}>
         {props.children}
       </ThemeContext.Provider>
