@@ -3,14 +3,14 @@
   border-radius: 8px;
   overflow: hidden;
 
-  background: #fff;
-  border: 1px solid #835afd;
+  background: var(--white);
+  border: 1px solid var(--purple);
   cursor: pointer;
 
   display: flex;
 
   > div {
-    background: #835afd;
+    background: var(--purple);
     padding: 0 12px;
     display: flex;
     justify-content: center;
@@ -31,9 +31,9 @@
 /* ========== Dark Theme ========== */
 
 .room-code.dark {
-  background: #121214;
+  background: var(--backgroundDark);
 
   span {
-    color: #fff;
+    color: var(--white);
   }
 }

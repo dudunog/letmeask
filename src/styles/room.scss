@@ -58,7 +58,7 @@
         background: #e559f9;
         border-radius: 9999px;
         padding: 8px 16px;
-        color: #fff;
+        color: var(--white);
         font-weight: 500;
         font-size: 14px;
       }
@@ -108,7 +108,7 @@
           button {
             background: transparent;
             border: 0;
-            color: #835afd;
+            color: var(--purple);
             text-decoration: underline;
             font-size: 14px;
             font-weight: 500;
@@ -217,18 +217,18 @@
     .content {
       .content-right {
         button {
-          color: #fff;
-          background: #121214;
+          color: var(--white);
+          background: var(--backgroundDark);
         }
       }
     }
   }
 
   main {
-    color: #fff;
+    color: var(--white);
     .room-title {
       h1 {
-        color: #fff;
+        color: var(--white);
       }
     }
 
@@ -236,15 +236,19 @@
       .form-footer {
         .user-info {
           span {
-            color: #fff;
+            color: var(--white);
           }
+        }
+
+        span {
+          color: var(--white);
         }
       }
 
       textarea {
-        background: #121214;
-        color: #fff;
-        border: 2px solid #835afd;
+        background: var(--backgroundDark);
+        color: var(--white);
+        border: 2px solid var(--purple);
       }
     }
   }

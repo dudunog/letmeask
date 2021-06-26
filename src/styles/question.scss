@@ -10,6 +10,7 @@
 
   p {
     color: #29292e;
+    word-break: break-word;
   }
 
   footer {
@@ -48,16 +49,16 @@
         gap: 8px;
 
         &.liked {
-          color: #835afd;
+          color: var(--purple);
 
           svg path {
-            stroke: #835afd;
+            stroke: var(--purple);
           }
         }
       }
 
       &:hover {
-        filter: brightness(0.7);
+        filter: brightness(1.5);
       }
     }
   }
@@ -66,17 +67,17 @@
 /* ========== Dark Theme ========== */
 
 .question.dark {
-  background: #121214;
-  border: 2px solid #835afd;
+  background: var(--backgroundDark);
+  border: 2px solid var(--purple);
 
   p {
-    color: #fff;
+    color: var(--white);
   }
 
   footer {
     .user-info {
       span {
-        color: #fff;
+        color: var(--white);
       }
     }
   }

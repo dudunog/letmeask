@@ -1,7 +1,7 @@
 .theme.light {
-  background: #f8f8f8;
+  background: var(--background);
 }
 
 .theme.dark {
-  background: #121214;
+  background: var(--backgroundDark);
 }

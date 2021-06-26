@@ -4,6 +4,19 @@
   box-sizing: border-box;
 }
 
+:root {
+  --one: #585bfe;
+  --pink: #ea59f9;
+  --original: #835afd;
+
+  --white: #fff;
+  --background: #f2f3f5;
+  --purple: #3d348b;
+
+  --background: #f8f8f8;
+  --backgroundDark: #121214;
+}
+
 html,
 body,
 #root {

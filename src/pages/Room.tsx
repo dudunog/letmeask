@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 import logoImg from "../assets/images/logo.svg";
 
@@ -23,10 +23,12 @@ type RoomParams = {
 
 export function Room() {
   const { user } = useAuth();
+  const history = useHistory();
   const params = useParams<RoomParams>();
   const [newQuestion, setNewQuestion] = useState("");
   const { theme, toggleTheme } = useTheme();
   const roomId = params.id;
+  const [isClosed, setIsClosed] = useState(false);
 
   const { title, questions } = useRoom(params.id);
 
@@ -39,8 +41,14 @@ export function Room() {
     toast.error("Não foi possível registrar sua pergunta. Tente novamente!");
   };
 
+  const errorLikeQuestion = () => {
+    toast.error("Para curtir uma pergunta, vocẽ precisa fazer login!");
+  };
+
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
+
+    verifyRoomClosed();
 
     if (newQuestion.trim() === "") {
       toast.error(
@@ -75,20 +83,49 @@ export function Room() {
       });
   }
 
+  async function goToHome() {
+    history.push("/");
+  }
+
   async function handleLikeQuestion(
     questionId: string,
     likeId: string | undefined
   ) {
-    if (likeId) {
-      await database
-        .ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`)
-        .remove();
+    if (user) {
+      if (likeId) {
+        await database
+          .ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`)
+          .remove();
+      } else {
+        await database
+          .ref(`rooms/${roomId}/questions/${questionId}/likes`)
+          .push({
+            authorId: user?.id,
+          });
+      }
     } else {
-      await database.ref(`rooms/${roomId}/questions/${questionId}/likes`).push({
-        authorId: user?.id,
-      });
+      errorLikeQuestion();
     }
   }
+
+  async function verifyRoomClosed() {
+    const roomRef = await database.ref(`rooms/${params.id}`).get();
+
+    if (!roomRef.exists()) {
+      alert("Room does not exists");
+      history.push("/rooms/new");
+      return;
+    }
+
+    if (roomRef.val().endedAt) {
+      alert("Room already closed.");
+      history.push("/rooms/new");
+    }
+  }
+
+  useEffect(() => {
+    verifyRoomClosed();
+  }, []);
 
   return (
     <div id="page-room" className={theme}>
@@ -102,7 +139,7 @@ export function Room() {
               checkedIcon={false}
               uncheckedIcon={false}
               handleDiameter={20}
-              onColor="#835afd"
+              onColor="#ea59f9"
             />
           </div>
           <div className="content-right">
@@ -130,7 +167,8 @@ export function Room() {
               </div>
             ) : (
               <span>
-                Para enviar uma pergunta, <button>faça seu login</button>.
+                Para enviar uma pergunta,{" "}
+                <button onClick={goToHome}>faça seu login</button>.
               </span>
             )}
             <Button type="submit" disabled={!user}>

@@ -70,7 +70,7 @@ export function Home() {
             checkedIcon={false}
             uncheckedIcon={false}
             handleDiameter={20}
-            onColor="#835afd"
+            onColor="#ea59f9"
           />
         </header>
         <div className="main-content">
