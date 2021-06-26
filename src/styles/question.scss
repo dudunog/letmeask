@@ -8,6 +8,19 @@
     margin-top: 8px;
   }
 
+  &.highlighted {
+    background: #f4f0ff;
+    border: 2px solid var(--purple);
+
+    footer .user-info span {
+      color: #29292e;
+    }
+  }
+
+  &.answered {
+    background: #dbdcdd;
+  }
+
   p {
     color: #29292e;
     word-break: break-word;
@@ -34,6 +47,11 @@
         color: #737380;
         font-size: 14px;
       }
+    }
+
+    > div {
+      display: flex;
+      gap: 13px;
     }
 
     button {
@@ -67,8 +85,11 @@
 /* ========== Dark Theme ========== */
 
 .question.dark {
-  background: var(--backgroundDark);
-  border: 2px solid var(--purple);
+  background: #0c0c0e;
+
+  &.answered {
+    background: #000;
+  }
 
   p {
     color: var(--white);

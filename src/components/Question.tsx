@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { useTheme } from "../Hooks/useTheme";
+import cx from "classnames";
 
 import "./../styles/question.scss";
 
@@ -11,13 +12,27 @@ type QuestionProps = {
     avatar: string;
   };
   children?: ReactNode;
+  isAnswered?: boolean;
+  isHighlighted?: boolean;
 };
 
-export function Question({ content, author, children }: QuestionProps) {
+export function Question({
+  content,
+  author,
+  isAnswered = false,
+  isHighlighted = false,
+  children,
+}: QuestionProps) {
   const { theme } = useTheme();
 
   return (
-    <div className={`question ${theme}`}>
+    <div
+      className={cx(
+        `question ${theme}`,
+        { answered: isAnswered },
+        { highlighted: isHighlighted && !isAnswered }
+      )}
+    >
       <p>{content}</p>
 
       <footer>
