@@ -28,7 +28,6 @@ export function Room() {
   const [newQuestion, setNewQuestion] = useState("");
   const { theme, toggleTheme } = useTheme();
   const roomId = params.id;
-  const [isClosed, setIsClosed] = useState(false);
 
   const { title, questions } = useRoom(params.id);
 
@@ -48,7 +47,7 @@ export function Room() {
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
 
-    verifyRoomClosed();
+    checkRoomClosed();
 
     if (newQuestion.trim() === "") {
       toast.error(
@@ -108,7 +107,7 @@ export function Room() {
     }
   }
 
-  async function verifyRoomClosed() {
+  async function checkRoomClosed() {
     const roomRef = await database.ref(`rooms/${params.id}`).get();
 
     if (!roomRef.exists()) {
@@ -124,7 +123,7 @@ export function Room() {
   }
 
   useEffect(() => {
-    verifyRoomClosed();
+    checkRoomClosed();
   }, []);
 
   return (
@@ -132,7 +131,9 @@ export function Room() {
       <header>
         <div className="content">
           <div className="content-left">
-            <img src={logoImg} alt="Letmeask" />
+            <a href="/">
+              <img src={logoImg} alt="Letmeask" />
+            </a>
             <Switch
               onChange={toggleTheme}
               checked={theme === "dark"}

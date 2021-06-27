@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { useTheme } from "../Hooks/useTheme";
 import cx from "classnames";
 
-import "./../styles/question.scss";
+import "../styles/question.scss";
 
 type QuestionProps = {
   key: string;

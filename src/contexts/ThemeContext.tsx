@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 
-import "./../styles/dark.scss";
+import "./../styles/theme.scss";
 
 type Theme = "light" | "dark";
 

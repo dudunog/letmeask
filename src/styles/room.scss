@@ -18,8 +18,10 @@
         justify-content: space-between;
         flex-direction: row;
 
-        > img {
-          max-height: 45px;
+        > a {
+          img {
+            max-height: 45px;
+          }
         }
       }
 
@@ -121,6 +123,24 @@
     .question-list {
       margin-top: 32px;
       padding-bottom: 120px;
+    }
+
+    .no-questions {
+      text-align: center;
+      margin-top: 6rem;
+
+      img {
+        max-width: 150px;
+        align-self: center;
+      }
+
+      p {
+        font-family: "Poppins", sans-serif;
+        color: rgb(41, 41, 46);
+        font-weight: 700;
+        font-size: 1.125rem;
+        margin-top: 1rem;
+      }
     }
   }
 }
@@ -249,6 +269,12 @@
         background: var(--backgroundDark);
         color: var(--white);
         border: 2px solid var(--purple);
+      }
+    }
+
+    .no-questions {
+      p {
+        color: var(--white);
       }
     }
   }

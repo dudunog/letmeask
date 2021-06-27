@@ -68,14 +68,16 @@ export function AdminRoom() {
       <header>
         <div className="content">
           <div className="content-left">
-            <img src={logoImg} alt="Letmeask" />
+            <a href="/">
+              <img src={logoImg} alt="Letmeask" />
+            </a>
             <Switch
               onChange={toggleTheme}
               checked={theme === "dark"}
               checkedIcon={false}
               uncheckedIcon={false}
               handleDiameter={20}
-              onColor="#835afd"
+              onColor="#ea59f9"
             />
           </div>
           <div className="content-right">
@@ -92,51 +94,61 @@ export function AdminRoom() {
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
 
-        <div className="question-list">
-          {questions.map(question => {
-            return (
-              <Question
-                key={question.id}
-                content={question.content}
-                author={question.author}
-                isAnswered={question.isAnswered}
-                isHighlighted={question.isHighLighted}
-              >
-                {!question.isAnswered && (
-                  <>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        handleCheckQuestionAsAnswered(question.id);
-                      }}
-                    >
-                      <img
-                        src={checkImg}
-                        alt="Marcar pergunta como respondida"
-                      />
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        handleHighlightQuestion(question.id);
-                      }}
-                    >
-                      <img src={answerImg} alt="Dar destaque à pergunta" />
-                    </button>
-                  </>
-                )}
-                <button
-                  type="button"
-                  onClick={() => {
-                    handleDeleteQuestion(question.id);
-                  }}
+        {questions.length > 0 ? (
+          <div className="question-list">
+            {questions.map(question => {
+              return (
+                <Question
+                  key={question.id}
+                  content={question.content}
+                  author={question.author}
+                  isAnswered={question.isAnswered}
+                  isHighlighted={question.isHighLighted}
                 >
-                  <img src={deleteImg} alt="Remover pergunta" />
-                </button>
-              </Question>
-            );
-          })}
-        </div>
+                  {!question.isAnswered && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          handleCheckQuestionAsAnswered(question.id);
+                        }}
+                      >
+                        <img
+                          src={checkImg}
+                          alt="Marcar pergunta como respondida"
+                        />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          handleHighlightQuestion(question.id);
+                        }}
+                      >
+                        <img src={answerImg} alt="Dar destaque à pergunta" />
+                      </button>
+                    </>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      handleDeleteQuestion(question.id);
+                    }}
+                  >
+                    <img src={deleteImg} alt="Remover pergunta" />
+                  </button>
+                </Question>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="no-questions">
+            <img
+              src="https://image.flaticon.com/icons/png/512/2190/2190552.png"
+              alt=""
+            />
+            <p>Ainda não há perguntas por aqui</p>
+          </div>
+        )}
 
         <Toaster
           position="top-center"
