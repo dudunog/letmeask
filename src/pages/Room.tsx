@@ -145,6 +145,7 @@ export function Room() {
           </div>
           <div className="content-right">
             <RoomCode code={roomId} />
+            <img src={user?.avatar} alt="Avatar" />
           </div>
         </div>
       </header>

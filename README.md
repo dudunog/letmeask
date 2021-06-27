@@ -9,7 +9,7 @@ Aplicação criada durante o NLW together da Rocketseat.
 </p>
 
 <h1 align="center">
-    <img alt="Letmeask" title="Letmeask" src="src/assets/images/cover.png" />
+    <img alt="Letmeask" title="Letmeask" src="src/assets/images/Letmeask.png" />
 </h1>
 
 <br>

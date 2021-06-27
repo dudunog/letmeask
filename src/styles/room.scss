@@ -36,6 +36,12 @@
           white-space: nowrap;
           height: 40px;
         }
+
+        > img {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+        }
       }
     }
   }
