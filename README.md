@@ -28,7 +28,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - TypeScript
 - Firebase
 
-## 🚀 Getting started
+## 🚀 Execute o projeto
 
 1. Clone este repositório: `git clone https://github.com/dudunog/letmeask.git`
 2. Entre no diretório do projeto `cd letmeask`
