@@ -1,29 +1,37 @@
-# Letmeask
+<h1 align="center">
+  <br>
+  <img alt="Letmeask" src="src/assets/images/logo.svg" width="160px">
+  <br>
+</h1>
 
-## 💻 Projeto
-
-Aplicação criada durante o NLW together da Rocketseat.
+<p align="center">Aplicação criada durante o NLW together da Rocketseat.</p>
 
 <p align="center">
-  <img alt="Letmeask" src="src/assets/images/logo.svg" width="160px">
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT">
+  </a>
 </p>
 
-<h1 align="center">
+<div align="center">
     <img alt="Letmeask" title="Letmeask" src="src/assets/images/Letmeask.png" />
-</h1>
+</div>
 
 <br>
 
 ## 🧪 Tecnologias
 
-Este projeto foi desenvolvido utilizando as seguintes tecnologias:
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
-- [React](https://reactjs.org)
-- [Firebase](https://firebase.google.com/)
-- [TypeScript](https://www.typescriptlang.org/)
+- HTML5
+- CSS
+- React
+- TypeScript
+- Firebase
 
-## 🔖 Layout
+## 🚀 Getting started
 
-Você pode visualizar o layout do projeto através do link abaixo:
-
-- [Layout Web](https://www.figma.com/file/u0BQK8rCf2KgzcukdRRCWh/Letmeask/duplicate)
+1. Clone este repositório: `git clone https://github.com/dudunog/letmeask.git`
+2. Entre no diretório do projeto `cd letmeask`
+3. Instale as dependências com `yarn`
+4. Crie um arquivo `.env.local` com suas credencias do firebase
+5. Inicie o projeto com `yarn start`
