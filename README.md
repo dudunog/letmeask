@@ -4,7 +4,7 @@
   <br>
 </h1>
 
-<p align="center">Aplicação de salass de Q&A criada durante o NLW together da Rocketseat. </p>
+<p align="center">Aplicação de salass de Q&A criada durante o NLW together da Rocketseat.</p>
 
 <p align="center">
   <a href="https://opensource.org/licenses/MIT">
