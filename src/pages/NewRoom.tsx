@@ -55,7 +55,7 @@ export function NewRoom() {
             checkedIcon={false}
             uncheckedIcon={false}
             handleDiameter={20}
-            onColor="#ea59f9"
+            onColor="#835afd"
           />
         </header>
         <div className="main-content">
