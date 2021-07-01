@@ -4,7 +4,7 @@
   <br>
 </h1>
 
-<p align="center">Aplicação criada durante o NLW together da Rocketseat.</p>
+<p align="center">Aplicação de salass de Q&A criada durante o NLW together da Rocketseat. </p>
 
 <p align="center">
   <a href="https://opensource.org/licenses/MIT">
@@ -18,7 +18,7 @@
 
 <br>
 
-## 🧪 Tecnologias
+## :hammer: Tecnologias
 
 Este projeto foi desenvolvido com as seguintes tecnologias:
 
@@ -30,8 +30,8 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 🚀 Execute o projeto
 
-1. Clone este repositório: `git clone https://github.com/dudunog/letmeask.git`
+1. Clone este repositório `git clone https://github.com/dudunog/letmeask.git`
 2. Entre no diretório do projeto `cd letmeask`
-3. Instale as dependências com `yarn`
+3. Instale as dependências com `yarn install` ou `npm install`
 4. Crie um arquivo `.env.local` com suas credencias do firebase
 5. Inicie o projeto com `yarn start`
