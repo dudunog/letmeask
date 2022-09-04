@@ -34,4 +34,4 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 2. Entre no diretório do projeto `cd letmeask`
 3. Instale as dependências com `yarn install` ou `npm install`
 4. Crie um arquivo `.env.local` com suas credencias do firebase
-5. Inicie o projeto com `yarn start`
+5. Inicie o projeto com `yarn run start` ou `npm run start`
